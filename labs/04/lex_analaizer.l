@@ -4,13 +4,15 @@
 
 %%
 [ \n]                   printf("\n");
-"//"[a-zA-Z][a-zA-Z0-9]*  printf("COMMENT");
+"//".*                  printf("COMMENT");
 [=]                     printf(" assign");
 [0123456789]+           printf("inum");
 [0-9]+.[0-9]+           printf("fnum");
 f                       printf("floatdcl");
 p                       printf("print");
 i                       printf("intdcl");
+"+"                     printf("plus");
+"-"                     printf("minus");
 [a-zA-Z][a-zA-Z0-9]*    printf("id");
 
 %%
